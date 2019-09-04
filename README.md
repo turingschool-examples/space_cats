@@ -42,6 +42,8 @@ What can we do?
 
 ```ruby
 	# config/routes.rb
+        get '/cats', to: 'cats#index'
+        get '/cats/:id', to: 'cats#show'
 	scope :admin do
 	      patch '/cats', to: 'cats#update'
    	      get '/cats/edit', to: 'cats#edit'
@@ -69,6 +71,8 @@ We want both `/admin/cats` and `/cats` to be handled by our controllers in diffe
 ### Scope and Module
 
 ```ruby
+	get '/cats', to: 'cats#index'
+        get '/cats/:id', to: 'cats#show'
 	scope :admin, module: :admin do
 	 patch '/cats', to: 'cats#update'
    	 get '/cats/edit', to: 'cats#edit'
@@ -115,6 +119,8 @@ As you may have noticed, we don't have any path helpers that are specific to thi
 ### `scope`, `module` and `as`
 
 ```ruby
+	get '/cats', to: 'cats#index'
+    	get '/cats/:id', to: 'cats#show'
 	scope :admin, module: :admin, as: :admin do
          patch '/cats', to: 'cats#update'
    	 get '/cats/edit', to: 'cats#edit'
@@ -151,6 +157,8 @@ _Rad!_
 Update the routes file to the following:
 
 ```ruby
+	get '/cats', to: 'cats#index'
+    	get '/cats/:id', to: 'cats#show'
 	namespace :admin do
 	 patch '/cats', to: 'cats#update'
    	 get '/cats/edit', to: 'cats#edit'
@@ -161,6 +169,8 @@ Update the routes file to the following:
 vs
 
 ```ruby
+        get '/cats', to: 'cats#index'
+    	get '/cats/:id', to: 'cats#show'
 	scope :admin, module: :admin, as: :admin do
 	 patch '/cats', to: 'cats#update'
    	 get '/cats/edit', to: 'cats#edit'
