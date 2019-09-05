@@ -1,1 +1,4 @@
 <%= link_to "Create a Cat", "/cats" %>
+<% @cats.each do |cat| %>
+  <p><%= cat.name %></p>
+<% end %>
