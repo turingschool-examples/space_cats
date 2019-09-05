@@ -3,7 +3,11 @@ Rails.application.routes.draw do
 
 
   get '/cats', to: 'cats#index'
+  get '/cats/new', to: 'cats#new'
   get '/cats/:id', to: 'cats#show'
+  post '/cats', to: 'cats#create'
+  get '/cats/:id/edit', to: 'cats#edit'
+  patch '/cats/:id', to: 'cats#update'
 
 
 #admin functionality
