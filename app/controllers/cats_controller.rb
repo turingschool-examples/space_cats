@@ -4,6 +4,7 @@ class CatsController <ApplicationController
   end
 
   def new
+    @cats = Cat.new
   end
 
   def create
@@ -28,6 +29,7 @@ class CatsController <ApplicationController
   private
 
   def cat_params
-    params.permit(:name)
+    params.require(:cat).permit(:name)
   end
+
 end
